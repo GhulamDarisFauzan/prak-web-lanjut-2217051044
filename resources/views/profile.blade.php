@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
+    <!-- <img src="{{ asset('assets/img/card.jpg') }}" alt="Deskripsi Gambar"> -->
+
+
     <style>
         body {
             display: flex;
@@ -12,7 +16,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f0f4f8; /* Warna latar belakang */
+            background-color: #f0f4f8; 
             font-family: Arial, sans-serif;
         }
         .profile-container {
@@ -21,14 +25,14 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
-            width: 300px; /* Lebar kontainer */
+            width: 300px; 
         }
         .profile-logo {
-            width: 100px; /* Ukuran logo */
+            width: 100px; 
             height: auto;
             margin-bottom: 20px;
-            border-radius: 50%; /* Membuat logo menjadi bulat */
-            border: 2px solid #4CAF50; /* Border hijau di sekitar logo */
+            border-radius: 50%; 
+            border: 2px solid #4CAF50; 
         }
         h2 {
             margin: 10px 0;
@@ -40,11 +44,13 @@
         }
         td {
             padding: 10px;
-            border-bottom: 1px solid #ddd; /* Garis pemisah */
+            border-bottom: 1px solid #ddd; 
         }
         td:first-child {
-            font-weight: bold; /* Membuat teks nama lebih tebal */
+            font-weight: bold; 
         }
+
+
     </style>
 
 </head>
@@ -54,6 +60,7 @@
     <div class="profile-container">
    
     <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Logo Profile" class="profile-logo">
+
         
     <table>
             <tr>
