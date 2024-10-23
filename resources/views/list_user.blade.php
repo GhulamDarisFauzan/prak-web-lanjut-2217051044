@@ -10,7 +10,7 @@
                     <th class="border border-black px-3 py-2 text-left">Nama</th>
                     <th class="border border-black px-3 py-2 text-left">NPM</th>
                     <th class="border border-black px-3 py-2 text-left">Kelas</th>
-                    <th class="border border-black px-3 py-2 text-left">Aksi</th>
+                    <th class="border border-black px-3 py-2 text-left">IPK</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                         <td class="border border-black px-3 py-2 text-left"><?= $user['nama']?></td>
                         <td class="border border-black px-3 py-2 text-left"><?= $user['npm']?></td>
                         <td class="border border-black px-3 py-2 text-left"><?= $user['nama_kelas']?></td>
-                        <td class="border border-black px-3 py-2 text-left"></td>
+                        <td class="border border-black px-3 py-2 text-left">{{ $user->ipk ?? 'Tidak ada' }}</td>
                     </tr>
                 <?php
                 }
@@ -35,3 +35,5 @@
 </div>
     
 @endsection
+
+
