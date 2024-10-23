@@ -6,8 +6,6 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css') }}">
-    <!-- <img src="{{ asset('assets/img/card.jpg') }}" alt="Deskripsi Gambar"> -->
-
 
     <style>
         body {
@@ -41,6 +39,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px; /* Optional: to add some space between image and table */
         }
         td {
             padding: 10px;
@@ -49,40 +48,20 @@
         td:first-child {
             font-weight: bold; 
         }
-
-
     </style>
 
 </head>
-
-   <body>
+<body>
 
     <div class="profile-container">
-   
-    <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Logo Profile" class="profile-logo">
+        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Logo Profile" class="profile-logo">
+        <h2>Profile Details</h2>
 
-        
-    <table>
-            <tr>
-                <td>Nama</td>
-                <td>:</td>
-                <td><?= $nama ?></td>
-            </tr>
-            <br>
-            <tr>
-                <td>Kelas</td>
-                <td>:</td>
-                <td><?= $kelas ?></td>
-            </tr>
-            <br>
-            <tr>
-                <td>NPM</td>
-                <td>:</td>
-                <td><?= $npm ?></td>
-            </tr>
-    </table>
-    
-    </div>
-   
-   </body>
+    <p>Nama: {{ $nama }}</p>
+    <p>NPM: {{ $npm }}</p>
+    <p>Kelas: {{ $nama_kelas ?? 'Kelas tidak ditemukan' }}</p>
+
+
+</body>
 </html>
+

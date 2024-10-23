@@ -1,8 +1,14 @@
 <!-- resources/views/user/create.blade.php -->
-@extends('layouts.app')
 
-@section('content')
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Create New User</h2>
         <form action="{{ route('user.store') }}" method="POST">
@@ -18,6 +24,10 @@
                 <input type="text" name="npm" class="form-control" id="npm" required>
             </div>
 
+            <div class="mb-3">
+                <label for="kelas" class="form-label">Kelas</label>
+                <input type="text" name="kelas" class="form-control" id="kelas" required>
+            </div>
 
             <label for="id_kelas">Kelas :</label><br>
             <select name="kelas_id" id="kelas_id" required>
@@ -29,14 +39,10 @@
             <br><br><br>
 
 
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105">Submit</button>
-
+            <button type="submit" class="btn btn-primary">Submit</button>
 
 
         </form>
     </div>
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-
-    @endsection
+</body>
+</html>
