@@ -64,6 +64,7 @@ namespace App\Http\Controllers;
 use App\Models\UserModel;
 use App\Models\Kelas;   
 use Illuminate\Http\Request;
+use App\Models\ModelLayananRekomendasiUmum;
 
 class UserController extends Controller
 {
@@ -149,10 +150,63 @@ class UserController extends Controller
             'nama' => $request->input('nama'),
             'npm' => $request->input('npm'),
             'kelas_id' => $request->input('kelas_id'),
+            'ipk' => $request->input('ipk'), 
         ]);
 
         return redirect()->to('/user');
     }
+
+
+
+
+
+
+
+
+
+    
+
+    public function update(Request $request, $id)
+{
+    // Validate the form input, including IPK
+    $request->validate([
+        'ipk' => 'nullable|numeric|min:0|max:4',
+        // other validation rules...
+    ]);
+
+    // Find the user by ID and update the data
+    $user = $this->userModel->find($id);
+    $user->update([
+        'nama' => $request->input('nama'),
+        'jurusan' => $request->input('jurusan'),
+        'semester' => $request->input('semester'),
+        'ipk' => $request->input('ipk'),  // Update IPK in the database
+        // other fields...
+    ]);
+
+    return redirect()->route('users.index')->with('success', 'User updated successfully!');
+}
+
+
+
+
+
+public function show($id)
+{
+    $LayananRekomenUmum = ModelLayananRekomendasiUmum::where('encrypted_id', $id)->first();
+
+    $data = [
+        'nama_mhs' => auth()->user()->mahasiswa->nama_mahasiswa,
+        'ipk' => $LayananRekomenUmum->ipk,
+    ];
+
+    return view('layanan_fakultas.akademik.permohonan.rekomendasi_umum.show', $data);
+}
+
+
+
+
+
 }
 
 
