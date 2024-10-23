@@ -32,8 +32,11 @@
 </head>
 <body class="bg-gradient-to-t from-blue-100 to-blue-300 flex justify-center items-center min-h-screen">
     <div class="container mx-auto p-4">
-        <!-- Content Section -->
+        
         @yield('content')
     </div>
 </body>
 </html>
+
+
+

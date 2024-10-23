@@ -106,12 +106,26 @@ class UserController extends Controller
     //     return view('create-user', $data);
     // }
 
-        public function create(){
-        return view('create_user', [
-            'kelas' => Kelas::all(),
-        ]);
+
+
+
+    //     public function create(){
+    //     return view('create_user', [
+    //         'kelas' => Kelas::all(),
+    //     ]);
+    //    }
+
+       public function create()
+       {
+        $kelasModel = new Kelas();
+        $kelas = $kelasModel->getKelas();
+        $data = [
+        'kelas' => $kelas,
+        ];
+        return view('create_user', $data);
        }
 
+       
 
 
     public function store(Request $request){

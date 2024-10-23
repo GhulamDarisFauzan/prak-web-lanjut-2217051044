@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\User; // Import User model or UserModel if needed
 
 class Kelas extends Model
 {
@@ -14,6 +14,16 @@ class Kelas extends Model
 
     public function user()
     {
-        return $this->hasMany(UserModel::class, 'kelas_id');
+        // Assuming 'User' is the correct model, otherwise use UserModel
+        return $this->hasMany(User::class, 'kelas_id');
+    }
+
+    protected $table = 'kelas';  // Ensure the single quotes are correct and table exists
+    
+    public function getKelas()
+    {
+        return $this->all();
     }
 }
+
+
