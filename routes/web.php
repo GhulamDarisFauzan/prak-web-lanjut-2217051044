@@ -39,9 +39,20 @@ Route::get('/', function () {
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
+Route::resource('users', UserController::class);
+
 
 
 
 
 
 Route::get('/user/create', [UserController::class, 'create'])->name('create_user');
+// routes/web.php
+Route::resource('users', UserController::class);
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+
+
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
